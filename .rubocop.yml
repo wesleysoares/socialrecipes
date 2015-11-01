@@ -5,11 +5,11 @@ Style/MultilineOperationIndentation:
 AllCops:
   RunRailsCops: true
   Include:
-    - '**/Rakefile'
     - '**/config.ru'
   Exclude:
     - 'bin/**/*'
     - 'db/**/*'
     - 'config/**/*'
     - 'script/**/*'
+    - 'lib/**/*'
     - !ruby/regexp /old_and_unused\.rb$/
