@@ -1,0 +1,14 @@
+<h2>Cadastro de receitas</h2>
+<%= simple_form_for @recipe do |f| %>
+  <%= f.input :name_recipe, label: 'Nome da receita:', error: 'Esse campo é obrigatório' %>
+  <%= f.input :kitchen, label: 'Cozinha:', error: 'Esse campo é obrigatório' %>
+  <%= f.input :type_food , label: 'Tipo de comida:', error: 'Esse campo é obrigatório' %>
+  <%= f.input :food_preference, label: 'Preferência de comida:', error: 'Esse campo é obrigatório' %>
+  <%= f.input :amount_people, label: 'Quantas pessoas serve:' %>
+  <%= f.input :preparation_time, label: 'Tempo de preparo (Minutos):' %>
+  <%= f.input :difficulty, as: :radio_buttons, collection: ['Fácil', 'Médio', 'Difícil'] %>
+  <%= f.input :ingredients, as: :text, label: 'Ingredientes:', error: 'Esse campo é obrigatório' %>
+  <%= f.input :preparation, as: :text, label: 'Passo a passo:', error: 'Esse campo é obrigatório' %>
+  <%= f.input :image, label: 'Selecione uma foto:', as: :file %>
+  <%= f.submit 'Salvar' %>
+<% end %>
