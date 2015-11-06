@@ -1,4 +1,5 @@
 class Recipe < ActiveRecord::Base
+  belongs_to :kitchen
   validates :name_recipe,
             :kitchen,
             :type_food,

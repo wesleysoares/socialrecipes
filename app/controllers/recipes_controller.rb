@@ -8,7 +8,6 @@ class RecipesController < ApplicationController
     if @recipe.save
       redirect_to @recipe
     else
-      flash.now[:error] = 'Preencha os campos!'
       render 'new'
     end
   end
@@ -21,7 +20,7 @@ class RecipesController < ApplicationController
 
   def recipes_params
     params.require(:recipe).permit(:name_recipe,
-                                   :kitchen,
+                                   :kitchen_id,
                                    :type_food,
                                    :food_preference,
                                    :amount_people,
