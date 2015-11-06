@@ -1,14 +1,16 @@
 require 'rails_helper'
 
 feature 'User create a new recipe' do
-  scenario 'successfuly' do
+  scenario 'successfully' do
     kitchen = create(:kitchen)
+
+    typefood = create(:typefood)
 
     visit new_recipe_path
 
     fill_in 'Nome da receita', with: 'Bolo de chocolate'
     select kitchen.name, from: 'Cozinha'
-    fill_in 'Tipo de comida', with: 'Sobremesa'
+    select typefood.name, from: 'Tipo de comida'
     fill_in 'Preferência de comida', with: 'Doces'
     fill_in 'Quantas pessoas serve', with: '5'
     fill_in 'Tempo de preparo', with: '60'
@@ -24,7 +26,7 @@ feature 'User create a new recipe' do
 
     expect(page).to have_content('Bolo de chocolate')
     expect(page).to have_content kitchen.name
-    expect(page).to have_content('Sobremesa')
+    expect(page).to have_content typefood.name
     expect(page).to have_content('Doces')
     expect(page).to have_content('5')
     expect(page).to have_content('60')
