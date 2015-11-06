@@ -1,10 +1,32 @@
-<%= @recipe.name_recipe %><br>
-<%= @recipe.kitchen %><br>
-<%= @recipe.type_food %><br>
-<%= @recipe.food_preference %><br>
-<%= @recipe.amount_people %><br>
-<%= @recipe.preparation_time %><br>
-<%= @recipe.difficulty %><br>
-<%= @recipe.ingredients %><br>
-<%= @recipe.preparation %><br>
-<%= image_tag @recipe.image.url(:medium) %>
+<h2><%= @recipe.name_recipe %></h2>
+<section>
+  <dl>
+    <dt>Cozinha:</dt>
+    <dd><%= @recipe.kitchen %></dd>
+    <dt>Tipo:</dt>
+    <dd><%= @recipe.type_food %></dd>
+    <dt>Preferência:</dt>
+    <dd><%= @recipe.food_preference %></dd>
+    <dt>Serve:</dt>
+    <dd><%= @recipe.amount_people %></dd>
+    <dt>Tempo de preparo:</dt>
+    <dd><%= @recipe.preparation_time %></dd>
+    <dt>Dificuldade:</dt>
+    <dd><%= @recipe.difficulty %></dd>
+  </dl>
+</section>
+<section>
+  <%= image_tag @recipe.image.url(:medium) %>
+</section>
+<section>
+  <dl>
+    <dt>Ingredientes:</dt>
+    <dd><%= @recipe.ingredients %></dd>
+  </dl>
+</section>
+<section>
+  <dl>
+    <dt>Passo a passo</dt>
+    <dd><%= @recipe.preparation %></dd>
+  </dl>
+</section>

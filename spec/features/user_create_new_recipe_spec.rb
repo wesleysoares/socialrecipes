@@ -5,9 +5,9 @@ feature 'User create a new recipe' do
     visit new_recipe_path
 
     fill_in 'Nome da receita', with: 'Bolo de chocolate'
-    fill_in 'Cozinha', with: 'Profissional'
-    fill_in 'Tipo de comida', with: 'Caseira'
-    fill_in 'Preferência de comida', with: 'Todas'
+    fill_in 'Cozinha', with: 'Brasileira'
+    fill_in 'Tipo de comida', with: 'Sobremesa'
+    fill_in 'Preferência de comida', with: 'Doces'
     fill_in 'Quantas pessoas serve', with: '5'
     fill_in 'Tempo de preparo', with: '60'
     choose('Médio')
@@ -21,9 +21,9 @@ feature 'User create a new recipe' do
     click_on 'Salvar'
 
     expect(page).to have_content('Bolo de chocolate')
-    expect(page).to have_content('Profissional')
-    expect(page).to have_content('Caseira')
-    expect(page).to have_content('Todas')
+    expect(page).to have_content('Brasileira')
+    expect(page).to have_content('Sobremesa')
+    expect(page).to have_content('Doces')
     expect(page).to have_content('5')
     expect(page).to have_content('60')
     expect(page).to have_content('Médio')
