@@ -1,0 +1,5 @@
+<h2>Cadastro de Preferências de comidas</h2>
+<%= simple_form_for @foodpreference do |f| %>
+  <%= f.input :name, label: 'Descrição:', error: 'Esse campo é obrigatório!' %>
+  <%= f.submit 'Salvar' %>
+<% end %>

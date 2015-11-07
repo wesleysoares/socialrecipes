@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'User create new kitchen' do
+feature 'Admin create new kitchen' do
   scenario 'successfully' do
     visit new_kitchen_path
 

@@ -22,7 +22,7 @@ class RecipesController < ApplicationController
     params.require(:recipe).permit(:name_recipe,
                                    :kitchen_id,
                                    :typefood_id,
-                                   :food_preference,
+                                   :foodpreference_id,
                                    :amount_people,
                                    :preparation_time,
                                    :difficulty,

@@ -6,12 +6,14 @@ feature 'User create a new recipe' do
 
     typefood = create(:typefood)
 
+    foodpreference = create(:foodpreference)
+
     visit new_recipe_path
 
     fill_in 'Nome da receita', with: 'Bolo de chocolate'
     select kitchen.name, from: 'Cozinha'
     select typefood.name, from: 'Tipo de comida'
-    fill_in 'Preferência de comida', with: 'Doces'
+    select foodpreference.name, from: 'Preferência de comida:'
     fill_in 'Quantas pessoas serve', with: '5'
     fill_in 'Tempo de preparo', with: '60'
     choose('Médio')
@@ -27,7 +29,7 @@ feature 'User create a new recipe' do
     expect(page).to have_content('Bolo de chocolate')
     expect(page).to have_content kitchen.name
     expect(page).to have_content typefood.name
-    expect(page).to have_content('Doces')
+    expect(page).to have_content foodpreference.name
     expect(page).to have_content('5')
     expect(page).to have_content('60')
     expect(page).to have_content('Médio')
