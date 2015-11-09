@@ -16,6 +16,10 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
   end
 
+  def index
+    @recipes = Recipe.reorder(id: :desc).page params[:page]
+  end
+
   private
 
   def recipes_params

@@ -1,4 +1,6 @@
 class Recipe < ActiveRecord::Base
+  paginates_per 20
+
   belongs_to :kitchen
   belongs_to :typefood
   belongs_to :foodpreference
