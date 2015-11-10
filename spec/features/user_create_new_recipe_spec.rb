@@ -6,7 +6,7 @@ feature 'User create a new recipe' do
 
     typefood = create(:typefood)
 
-    foodpreference = create(:foodpreference)
+    foodpreference = create(:food_preference)
 
     visit new_recipe_path
 

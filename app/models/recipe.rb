@@ -3,12 +3,12 @@ class Recipe < ActiveRecord::Base
 
   belongs_to :kitchen
   belongs_to :typefood
-  belongs_to :foodpreference
+  belongs_to :food_preference
 
   validates :name_recipe,
             :kitchen,
             :typefood,
-            :foodpreference,
+            :food_preference,
             :ingredients,
             :preparation,
             presence: true

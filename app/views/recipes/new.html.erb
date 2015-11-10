@@ -6,16 +6,16 @@
   error: 'Esse campo é obrigatório' %>
   <%= f.association :typefood, label: 'Tipo de comida:',label_method: :name,
                       value_method: :id, error: 'Esse campo é obrigatório' %>
-  <%= f.association :foodpreference, label: 'Preferência de comida:',
+  <%= f.association :food_preference, label: 'Preferência de comida:',
                 error: 'Esse campo é obrigatório' %>
   <%= f.input :amount_people, label: 'Quantas pessoas serve:' %>
   <%= f.input :preparation_time, label: 'Tempo de preparo (Minutos):' %>
-  <%= f.input :difficulty, as: :radio_buttons,
+  <%= f.input :difficulty, label: 'Dificuldade:', as: :radio_buttons,
                 collection: ['Fácil', 'Médio', 'Difícil'] %>
   <%= f.input :ingredients, as: :text, label: 'Ingredientes:',
                 error: 'Esse campo é obrigatório' %>
   <%= f.input :preparation, as: :text, label: 'Passo a passo:',
                 error: 'Esse campo é obrigatório' %>
   <%= f.input :image, label: 'Selecione uma foto:', as: :file %>
-  <%= f.submit 'Salvar' %>
+  <%= f.submit 'Salvar', class: "btn btn-primary" %>
 <% end %>

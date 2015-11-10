@@ -1,12 +1,15 @@
 <h2>Últimas receitas</h2>
 <section>
-  <% @recipes.each do |recipe| %>
-    <p>
-      <%= link_to recipe.name_recipe, recipe %><br>
-      <%= recipe.foodpreference.name %><br>
-      <%= recipe.typefood.name %><br>
-      <%= recipe.kitchen.name %><br>
-      <%= recipe.difficulty %>
-    </p>
-  <% end %>
+
+  <%= render partial: 'recipe', collection: @recipes, as: :recipe %>
+
 </section>
+
+<aside>
+  <p>Preferência</p>
+  <ul>
+    <% @food_preference.each do |food| %>
+      <li><%= link_to food.name, food %></li>
+    <% end %>
+  </ul>
+</aside>
