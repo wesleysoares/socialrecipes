@@ -9,7 +9,12 @@ feature 'User select recipe for type, preference or kitchen' do
 
     click_on 'Brasileira'
 
-    expect(page).to have_content('Bolo de chocolate')
+    expect(page).to have_content recipe.name_recipe
+    expect(page).to have_content recipe.amount_people
+    expect(page).to have_content recipe.preparation_time
+    expect(page).to have_content recipe.difficulty
+    expect(page).to have_content recipe.ingredients
+    expect(page).to have_content recipe.preparation
 
   end
 end

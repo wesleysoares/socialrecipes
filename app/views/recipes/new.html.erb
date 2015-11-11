@@ -10,7 +10,7 @@
                 error: 'Esse campo é obrigatório' %>
   <%= f.input :amount_people, label: 'Quantas pessoas serve:' %>
   <%= f.input :preparation_time, label: 'Tempo de preparo (Minutos):' %>
-  <%= f.input :difficulty, as: :radio_buttons,
+  <%= f.input :difficulty, label: 'Dificuldade:', as: :radio_buttons,
                 collection: ['Fácil', 'Médio', 'Difícil'] %>
   <%= f.input :ingredients, as: :text, label: 'Ingredientes:',
                 error: 'Esse campo é obrigatório' %>
