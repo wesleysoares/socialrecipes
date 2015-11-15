@@ -2,7 +2,6 @@ require 'rails_helper'
 
 feature 'User select recipe for type, preference or kitchen' do
   scenario 'select type food' do
-
     recipe = create(:recipe)
 
     visit root_path
@@ -15,6 +14,5 @@ feature 'User select recipe for type, preference or kitchen' do
     expect(page).to have_content recipe.difficulty
     expect(page).to have_content recipe.ingredients
     expect(page).to have_content recipe.preparation
-
   end
 end

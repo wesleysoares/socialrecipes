@@ -5,6 +5,7 @@ Style/MultilineOperationIndentation:
 AllCops:
   RunRailsCops: true
   Include:
+    - '**/Rakefile'
     - '**/config.ru'
     - 'views/**/*'
   Exclude:
