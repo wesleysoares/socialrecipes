@@ -1,24 +1,24 @@
 class FoodPreferencesController < ApplicationController
   def new
-    @foodpreference = FoodPreference.new
+    @food_preference = FoodPreference.new
   end
 
   def create
-    @foodpreference = FoodPreference.new(foodpreference_params)
-    if @foodpreference.save
-      redirect_to @foodpreference
+    @food_preference = FoodPreference.new(food_preference_params)
+    if @food_preference.save
+      redirect_to @food_preference
     else
       render 'new'
     end
   end
 
   def show
-    @foodpreference = FoodPreference.find(params[:id])
+    @food_preference = FoodPreference.find(params[:id])
   end
 
   private
 
-  def foodpreference_params
+  def food_preference_params
     params.require(:food_preference).permit(:name)
   end
 end
