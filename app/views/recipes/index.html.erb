@@ -6,7 +6,10 @@
 </section>
 
 <aside>
-  <% @food_preference.each do |food| %>
-    <%= link_to food.name, food %>
-  <% end %>
+  <p>Preferência</p>
+  <ul>
+    <% @food_preference.each do |food| %>
+      <li><%= link_to food.name, food %></li>
+    <% end %>
+  </ul>
 </aside>

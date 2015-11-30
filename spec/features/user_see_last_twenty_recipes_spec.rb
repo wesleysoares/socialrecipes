@@ -8,12 +8,12 @@ feature 'User see last twenty recipes' do
     visit root_path
 
     expect(page).not_to have_content('Receita antiga')
+    expect(page).not_to have_content('Bolo de chocolate 21')
     expect(page).to have_content('Bolo de chocolate 1')
     expect(page).to have_content('Bolo de chocolate 20')
-    expect(page).to have_content('Vegetariana', count: 20)
-    expect(page).to have_content('Brasileira', count: 20)
-    expect(page).to have_content('Italiana', count: 20)
-    expect(page).to have_content('Italiana', count: 20)
-    expect(page).to have_content('Médio', count: 20)
+    expect(page).to have_content('Vegetariana')
+    expect(page).to have_content('Brasileira')
+    expect(page).to have_content('Italiana')
+    expect(page).to have_content('Médio')
   end
 end

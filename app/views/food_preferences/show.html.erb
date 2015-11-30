@@ -1,5 +1,10 @@
-<%= @foodpreference.name %>
+<h2><%= @foodpreference.name %></h2>
 <% @foodpreference.recipes.each do |recipe| %>
   <%= recipe.name_recipe %>
   <%= recipe.food_preference.name %>
+  <%= recipe.amount_people %>
+  <%= recipe.preparation_time %>
+  <%= recipe.difficulty %>
+  <%= recipe.ingredients %>
+  <%= recipe.preparation %>
 <% end %>
