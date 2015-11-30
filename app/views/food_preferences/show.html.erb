@@ -1,1 +1,5 @@
 <%= @foodpreference.name %>
+<% @foodpreference.recipes.each do |recipe| %>
+  <%= recipe.name_recipe %>
+  <%= recipe.food_preference.name %>
+<% end %>

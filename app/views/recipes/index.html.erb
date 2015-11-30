@@ -4,3 +4,9 @@
   <%= render partial: 'recipe', collection: @recipes, as: :recipe %>
 
 </section>
+
+<aside>
+  <% @food_preference.each do |food| %>
+    <%= link_to food.name, food %>
+  <% end %>
+</aside>

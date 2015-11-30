@@ -18,6 +18,7 @@ class RecipesController < ApplicationController
 
   def index
     @recipes = Recipe.reorder(id: :desc).page params[:page]
+    @food_preference = FoodPreference.all
   end
 
   private
@@ -26,7 +27,7 @@ class RecipesController < ApplicationController
     params.require(:recipe).permit(:name_recipe,
                                    :kitchen_id,
                                    :typefood_id,
-                                   :foodpreference_id,
+                                   :food_preference_id,
                                    :amount_people,
                                    :preparation_time,
                                    :difficulty,

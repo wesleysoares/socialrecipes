@@ -6,7 +6,7 @@ feature 'User select recipe for type, preference or kitchen' do
 
     visit root_path
 
-    click_on 'Brasileira'
+    click_on recipe.food_preference.name
 
     expect(page).to have_content recipe.name_recipe
     expect(page).to have_content recipe.amount_people
