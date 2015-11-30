@@ -8,6 +8,6 @@ FactoryGirl.define do
     preparation 'Junte tudo e pronto!'
     kitchen
     typefood
-    foodpreference
+    food_preference
   end
 end

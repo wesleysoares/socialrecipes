@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'Admin create new food preference' do
   scenario 'successfully' do
-    visit new_foodpreference_path
+    visit new_food_preference_path
 
     fill_in 'Descrição:', with: 'Vegetariana'
 
@@ -12,7 +12,7 @@ feature 'Admin create new food preference' do
   end
 
   scenario 'unsuccessfully' do
-    visit new_foodpreference_path
+    visit new_food_preference_path
 
     click_on 'Salvar'
 
