@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'User create new type food' do
   scenario 'successfully' do
-    visit new_typefood_path
+    visit new_type_food_path
 
     fill_in 'Descrição:', with: 'Sobremesa'
 
@@ -11,7 +11,7 @@ feature 'User create new type food' do
     expect(page).to have_content('Sobremesa')
   end
   scenario 'unsuccessfully' do
-    visit new_typefood_path
+    visit new_type_food_path
 
     click_on 'Salvar'
 

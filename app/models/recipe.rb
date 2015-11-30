@@ -2,12 +2,12 @@ class Recipe < ActiveRecord::Base
   paginates_per 20
 
   belongs_to :kitchen
-  belongs_to :typefood
+  belongs_to :type_food
   belongs_to :food_preference
 
   validates :name_recipe,
             :kitchen,
-            :typefood,
+            :type_food,
             :food_preference,
             :ingredients,
             :preparation,

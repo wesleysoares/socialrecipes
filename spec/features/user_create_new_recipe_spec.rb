@@ -4,7 +4,7 @@ feature 'User create a new recipe' do
   scenario 'successfully' do
     kitchen = create(:kitchen)
 
-    typefood = create(:typefood)
+    typefood = create(:type_food)
 
     foodpreference = create(:food_preference)
 

@@ -7,7 +7,7 @@ FactoryGirl.define do
     ingredients 'Farinha de trigo e fermento'
     preparation 'Junte tudo e pronto!'
     kitchen
-    typefood
+    type_food
     food_preference
   end
 end
