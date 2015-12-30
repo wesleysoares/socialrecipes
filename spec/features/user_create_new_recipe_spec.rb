@@ -3,9 +3,7 @@ require 'rails_helper'
 feature 'User create a new recipe' do
   scenario 'successfully' do
     kitchen = create(:kitchen)
-
     type_food = create(:type_food)
-
     food_preference = create(:food_preference)
 
     visit new_recipe_path
