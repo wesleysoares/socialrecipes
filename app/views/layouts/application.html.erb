@@ -12,7 +12,8 @@
       <div class="navbar-header">
         <% if user_signed_in? %>
           <ul class="nav navbar-nav">
-            <li><%= link_to 'Minhas receitas', recipes_path(current_user.id) %></li>
+            <li><%= link_to 'Minhas receitas', recipes_user_path(current_user.id) %></li>
+            <li><%= link_to 'Sair', destroy_user_session_path, :method => :delete %></li>
           </ul>
         <% else %>
           <ul class="nav navbar-nav">
