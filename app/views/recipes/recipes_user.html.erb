@@ -1,0 +1,10 @@
+<% if @user.recipes.any? %>
+<% @user.recipes.each do |recipe| %>
+    <p><%= recipe.name_recipe %></p>
+    <p><%= recipe.user_id %></p>
+  <% end %>
+<% else %>
+<div class="alert alert-warning" role="alert">
+  <p>Sem receitas cadastradas :(</p>
+</div>
+<% end %>

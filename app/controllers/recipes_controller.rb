@@ -5,6 +5,7 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new(recipes_params)
+    @recipe.user = current_user
     if @recipe.save
       redirect_to @recipe
     else
@@ -14,6 +15,10 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
+  end
+
+  def recipes_user
+    @user = User.find(params[:id])
   end
 
   def index

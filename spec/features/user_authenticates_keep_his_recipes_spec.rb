@@ -36,6 +36,6 @@ feature 'User keep his recipes' do
 
     click_on 'Minhas receitas'
 
-    expect(page).to have_content 'Sem receitas cadastradas.'
+    expect(page).to have_content 'Sem receitas cadastradas :('
   end
 end
