@@ -1,10 +1,31 @@
-<% if @user.recipes.any? %>
-<% @user.recipes.each do |recipe| %>
-    <p><%= recipe.name_recipe %></p>
-    <p><%= recipe.user_id %></p>
+<div class="row">
+  <% if @user.recipes.any? %>
+    <% @user.recipes.each do |recipe| %>
+      <div class="col-sm-6 col-md-4">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="thumbnail">
+              <%= image_tag recipe.image.url(:medium), {class: "img-thumbnail"}%>
+                <div class="caption">
+                  <h3><%=link_to recipe.name_recipe,recipe %></h3>
+                  <dl>
+                    <dt>Cozinha</dt>
+                    <dd><%= recipe.kitchen.name %></dd>
+                    <dt>Tipo de comida</dt>
+                    <dd><%= recipe.type_food.name %></dd>
+                    <dt>Preferência de comida</dt>
+                    <dd><%= recipe.food_preference.name %></dd>
+                  </dl>
+                  <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="alert alert-warning" role="alert">
+      <p>Sem receitas cadastradas :(</p>
+    </div>
   <% end %>
-<% else %>
-<div class="alert alert-warning" role="alert">
-  <p>Sem receitas cadastradas :(</p>
 </div>
-<% end %>
