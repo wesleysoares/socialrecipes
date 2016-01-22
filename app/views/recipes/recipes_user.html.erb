@@ -1,7 +1,7 @@
 <div class="row">
   <% if @user.recipes.any? %>
     <% @user.recipes.each do |recipe| %>
-      <div class="col-sm-6 col-md-4">
+      <div class="col-sm-6 col-md-3">
         <div class="row">
           <div class="col-md-12">
             <div class="thumbnail">
@@ -16,7 +16,7 @@
                     <dt>Preferência de comida</dt>
                     <dd><%= recipe.food_preference.name %></dd>
                   </dl>
-                  <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                  <%= link_to 'Editar', edit_recipe_path(recipe), :method => :get, class: "btn btn-default navbar-btn" %> <%= link_to 'Excluir', edit_recipe_path(recipe), :method => :get, class: "btn btn-danger navbar-btn" %>
                 </div>
               </div>
             </div>

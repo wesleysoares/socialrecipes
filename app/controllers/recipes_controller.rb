@@ -26,6 +26,20 @@ class RecipesController < ApplicationController
     @food_preference = FoodPreference.all
   end
 
+  def edit
+    @recipe = Recipe.find(params[:id])
+  end
+
+  def update
+    @recipe = Recipe.find(params[:id])
+    @recipe.update!(recipes_params)
+    if @recipe.save
+      redirect_to @recipe
+    else
+      render 'new'
+    end
+  end
+
   private
 
   def recipes_params

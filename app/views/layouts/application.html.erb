@@ -7,9 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <nav class="navbar navbar-default">
+  <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
+        <a class="navbar-brand" href="/">Social Recipes</a>
         <% if user_signed_in? %>
           <ul class="nav navbar-nav">
             <li><%= link_to 'Minhas receitas', recipes_profile_path(current_user.id) %></li>
@@ -24,7 +25,6 @@
     </div>
   </nav>
   <div class='container'>
-  <h1>Social Recipes</h1>
     <%= yield %>
   </div>
 </body>
