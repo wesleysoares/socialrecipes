@@ -16,7 +16,7 @@
                     <dt>Preferência de comida</dt>
                     <dd><%= recipe.food_preference.name %></dd>
                   </dl>
-                  <%= link_to 'Editar', edit_recipe_path(recipe), :method => :get, class: "btn btn-default navbar-btn" %> <%= link_to 'Excluir', edit_recipe_path(recipe), :method => :get, class: "btn btn-danger navbar-btn" %>
+                  <%= link_to 'Editar', edit_recipe_path(recipe), :method => :get, class: "btn btn-default navbar-btn" %> <%= link_to 'Excluir', recipe_path(recipe), :method => :delete,data: { confirm: 'Tem certeza que deseja excluir essa receita?' }, class: "btn btn-danger navbar-btn" %>
                 </div>
               </div>
             </div>

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   get '/profile/:id/recipes', to: "recipes#recipes_user", as: 'recipes_profile'
 
-  resources :recipes, only: [:new, :create, :show, :edit, :update]
+  resources :recipes, only: [:new, :create, :show, :edit, :update, :destroy]
   resources :kitchens, only: [:new, :create, :show]
   resources :type_foods, only: [:new, :create, :show]
   resources :food_preferences, only: [:new, :create, :show]
