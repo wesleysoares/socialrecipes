@@ -42,7 +42,12 @@ class RecipesController < ApplicationController
 
   def destroy
     @recipe = Recipe.find(params[:id])
-    @recipe.destroy!
+    @recipe.destroy
+    respond_to do |format|
+      format.js
+      format.html { redirect_to recipes / current_user.id / recipes_url }
+      format.json { head :no_content }
+    end
   end
 
   private

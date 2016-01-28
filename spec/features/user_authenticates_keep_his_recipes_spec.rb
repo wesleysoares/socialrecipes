@@ -2,7 +2,6 @@ require 'rails_helper'
 
 feature 'User keep his recipes' do
   scenario 'and see' do
-
     user1 = create(:user)
     user2 = create(:user, email: 'teste@email.com')
     recipe1 = create(:recipe, user: user1)
@@ -25,7 +24,6 @@ feature 'User keep his recipes' do
   end
 
   scenario 'and not recipes' do
-
     user = create(:user)
 
     visit new_user_session_path
@@ -41,7 +39,6 @@ feature 'User keep his recipes' do
   end
 
   scenario 'and see details of recipe' do
-
     user = create(:user)
     recipe = create(:recipe, user: user, image: File
                     .open(Rails.root.join('spec', 'image', 'bolo.jpg')))
@@ -66,5 +63,5 @@ feature 'User keep his recipes' do
     expect(page).to have_content('Farinha de trigo e fermento')
     expect(page).to have_content('Junte tudo e pronto!')
     expect(page).to have_xpath("//img[contains(@src,'bolo.jpg')]")
-  end  
+  end
 end

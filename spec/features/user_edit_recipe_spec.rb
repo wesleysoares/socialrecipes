@@ -1,9 +1,7 @@
 require 'rails_helper'
 
 feature 'User edit recipe' do
-
   scenario 'successfully' do
-
     user = create(:user)
     recipe = create(:recipe, user: user, image: File
                     .open(Rails.root.join('spec', 'image', 'bolo.jpg')))

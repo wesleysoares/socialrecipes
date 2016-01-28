@@ -1,0 +1,3 @@
+$("#remove_recipe_<%="#{@recipe.id}"%>").bind('ajax:success', function(){
+  $('.thumbnail_<%=@recipe.id %>').remove();
+});

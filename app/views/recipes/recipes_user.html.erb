@@ -4,7 +4,7 @@
       <div class="col-sm-6 col-md-3">
         <div class="row">
           <div class="col-md-12">
-            <div class="thumbnail">
+            <div class="thumbnail_<%= recipe.id %>">
               <%= image_tag recipe.image.url(:medium), {class: "img-thumbnail"}%>
                 <div class="caption">
                   <h3><%=link_to recipe.name_recipe,recipe %></h3>
@@ -16,7 +16,15 @@
                     <dt>Preferência de comida</dt>
                     <dd><%= recipe.food_preference.name %></dd>
                   </dl>
-                  <%= link_to 'Editar', edit_recipe_path(recipe), :method => :get, class: "btn btn-default navbar-btn" %> <%= link_to 'Excluir', recipe_path(recipe), :method => :delete,data: { confirm: 'Tem certeza que deseja excluir essa receita?' }, class: "btn btn-danger navbar-btn" %>
+                  <%= link_to 'Editar', edit_recipe_path(recipe),
+                                          :method => :get,
+                                          class: "btn btn-default navbar-btn" %>
+                  <%= link_to 'Excluir', recipe_path(recipe),
+                                          :method => :delete,
+                                          data: { confirm: 'Tem certeza que deseja excluir essa receita?' },
+                                          class: "btn btn-danger navbar-btn",
+                                          remote: true,
+                                          id: "remove_recipe_#{recipe.id}" %>
                 </div>
               </div>
             </div>
